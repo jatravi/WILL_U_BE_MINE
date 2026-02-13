@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For You ❤️</title>
+
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    font-family: "Georgia", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: white;
+    transition: background 8s ease-in-out;
+  }
+
+  .content {
+    padding: 25px;
+    max-width: 90%;
+    z-index: 2;
+  }
+
+  h1 {
+    font-size: clamp(22px, 5vw, 42px);
+    line-height: 1.6;
+    transition: opacity 1.5s ease, transform 1.5s ease;
+  }
+
+  .glow {
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0% { text-shadow: 0 0 10px rgba(255,255,255,0.4); transform: scale(1); }
+    50% { text-shadow: 0 0 25px rgba(255,255,255,0.9); transform: scale(1.05); }
+    100% { text-shadow: 0 0 10px rgba(255,255,255,0.4); transform: scale(1); }
+  }
+
+  .floating-elements div {
+    position: fixed;
+    font-size: clamp(18px, 3vw, 28px);
+    pointer-events: none;
+    animation: float linear forwards;
+  }
+
+  @keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-110vh); }
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="content">
+  <h1 id="text"></h1>
+</div>
+
+<div class="floating-elements"></div>
+
+<script src="config.js"></script>
+<script src="valentine.js"></script>
+
+</body>
+</html>
